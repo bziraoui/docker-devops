@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rwz7AjxS+N/m/ZIfj9v7Xl3+HlSEl8JLwskkuEvMO2GkcLp8tPrc54u6S9ZYm9zNEgQEsl2xLiWdh4UxVeirDg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jalil\\source\\repos\\docker-devops\\env-test\\FamillyShare\\FamillyShare\\FamillyShare.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jalil\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\jalil\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
