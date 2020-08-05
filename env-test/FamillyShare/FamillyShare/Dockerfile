@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["FamillyShare/FamillyShare.csproj", "FamillyShare/"]
+COPY ["FamillyShare.csproj", "FamillyShare/"]
 RUN dotnet restore "FamillyShare/FamillyShare.csproj"
-COPY . .
 WORKDIR "/src/FamillyShare"
+COPY . .
 RUN dotnet build "FamillyShare.csproj" -c Release -o /app/build
 
 FROM build AS publish
