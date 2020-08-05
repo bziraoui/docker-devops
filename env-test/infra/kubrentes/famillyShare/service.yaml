@@ -1,0 +1,15 @@
+# Service manage container 
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: familly-share
+  name: familly-share-service
+spec:
+  ports:
+  - name: "443"
+    port: 443
+  selector:
+    app: familly-share
+status:
+  loadBalancer: {}
