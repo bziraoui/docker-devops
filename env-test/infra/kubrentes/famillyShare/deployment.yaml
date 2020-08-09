@@ -1,0 +1,38 @@
+# deployer le code source
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: familly-share
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: familly-share
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1@
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: familly-share
+    spec:
+      restartPolicy: Always
+      containers:
+      - image: register.local/famillyshare/dotnet:latest
+        imagePullPolicy: Always
+        name: familly-share
+        env:
+          - name: DATABASEURL
+            value: "mysql://username@hostname/namedatabase"
+        ports:
+          - containerPort: 80
+        volumeMounts:
+          - mountPath: /data/images
+            name: familly-share-data-vol
+        resources: {}
+      volumes:
+        - name: familly-share-data-vol
+          persistentVolumeClaim:
+            claimName: familly-share-data-pvc

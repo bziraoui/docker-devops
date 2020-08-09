@@ -1,0 +1,13 @@
+# Persistance de volume 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: familly-share-data-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+# ===== ATTENTION IL FAUT AUGMENTER POUR LA PROD ====
+      storage: 10Gi
+  storageClassName: default
